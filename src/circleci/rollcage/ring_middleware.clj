@@ -8,5 +8,6 @@
       (try
         (handler req)
         (catch Exception e
-          (rollcage/error rollcage-client e {:url (:uri req)})
+          (rollcage/error rollcage-client e {:url (:uri req)
+                                             :params (dissoc req :uri)})
           (throw e))))))
