@@ -3,7 +3,7 @@
 
 (def ^:const request-and-wrap-parameter-keys
   "selector for keys provided by ring's request map and by ring's wrap-parameter middleware"
-  [:http-method :query-string :query-params :form-params :params])
+  [:http-method :query-string :query-params :form-params :params :headers])
 
 (defn wrap-rollbar [handler rollcage-client]
   (if-not rollcage-client
